@@ -10,6 +10,7 @@ from stem.control import Controller
 import re
 ua = UserAgent()
 user_agent = ua.random
+print(user_agent)
 
 options = Options()
 #options.add_argument('--headless')
