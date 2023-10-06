@@ -4,3 +4,4 @@ webdriver-manager
 stem
 bs4
 six
+amazoncaptcha

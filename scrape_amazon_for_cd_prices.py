@@ -7,6 +7,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from fake_useragent import UserAgent
 from stem import Signal
 from stem.control import Controller
+from amazoncaptcha import AmazonCaptcha
+
 import re
 ua = UserAgent()
 user_agent = ua.random
@@ -50,6 +52,12 @@ def change_ip_address(password):
 def open_amazon_page(my_url):
     driver.get(my_url)
     time.sleep(1)
+    try:
+        captcha = AmazonCaptcha.fromdriver(driver)
+        solution = captcha.solve()
+        print(solution)
+    except:
+        print("Guess you don't have to solve a captcha")
     try:
         price = driver.find_element('xpath', './/span[@class="a-offscreen"]').get_attribute('textContent')
     except:
