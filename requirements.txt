@@ -1,0 +1,6 @@
+selenium
+fake_useragent
+webdriver-manager
+stem
+bs4
+six
